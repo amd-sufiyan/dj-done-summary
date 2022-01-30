@@ -1,0 +1,10 @@
+{% load i18n %}
+<form action="" class="nav-link">
+	<div class="input-group">
+		<input type="text" class="form-control form-control-sm" name="q" placeholder='{% trans "Search" %}' value={{ request.GET.q }} >
+		<div class="input-group-append">
+			<button type="submit" class="btn btn-sm btn-primary btn-q">{% trans "Search" %}</button>
+		</div>
+	</div>
+</form>
+

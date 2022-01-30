@@ -1,0 +1,77 @@
+
+
+	{% extends "base.html" %}
+	{% load i18n %}
+	{% load widget_tweaks %}
+	{% block content %}
+		<section class="py-5">
+			<div class="container">
+				<div class="row">
+					<div class="col py-2">
+						<a class="btn btn-sm btn-primary mr-1" href="{% url 'done_summary'%}?code=bbca">BBCA</a>
+						<a class="btn btn-sm btn-primary mr-1" href="{% url 'done_summary'%}?code=jmas">JMAS</a>
+						<a class="btn btn-sm btn-primary mr-1" href="{% url 'done_summary'%}?code=pkpk">PKPK</a>
+						<a class="btn btn-sm btn-primary mr-1" href="{% url 'done_summary'%}?code=bfin">BFIN</a>
+						<a class="btn btn-sm btn-primary mr-1" href="{% url 'done_summary'%}?code=poly">POLY</a>
+						<a class="btn btn-sm btn-primary mr-1" href="{% url 'done_summary'%}?code=jast">JAST</a>
+						<a class="btn btn-sm btn-primary mr-1" href="{% url 'done_summary'%}?code=issp">ISSP</a>
+						<a class="btn btn-sm btn-primary mr-1" href="{% url 'done_summary'%}?code=brms">BRMS</a>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+
+						<table class="table table-sm w-auto text-xsmall">
+							<thead>
+								<tr>
+									<th>code</th>
+									<th>Datetime</th>
+									<th>Price</th>
+									<th>B_Lot</th>
+									<th>S_Lot</th>
+									<th>T_Lot</th>
+									<th>B_Frq</th>
+									<th>S_Frq</th>
+									<th>T_Frq</th>
+								</tr>
+								
+							</thead>
+							<tbody>
+								{% for obj in object_list %}
+									<tr>
+										<td>{{ obj.code }}</td>
+										<td>{{ obj.timestamp|date:"d/b/Y H:i:s" }}</td>
+										<td>{{ obj.Price }}</td>
+										<td>{{ obj.B_Lot }}</td>
+										<td>{{ obj.S_Lot }}</td>
+										<td>{{ obj.T_Lot }}</td>
+										<td>{{ obj.B_Frq }}</td>
+										<td>{{ obj.S_Frq }}</td>
+										<td>{{ obj.T_Frq }}</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+							
+						</table>
+					</div>
+					<div class="col-md-2">
+						sidebar
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-md-12 mt-5">
+					    <div class="pagination-area">
+					        <div class="container">
+					            <div class="row justify-content-center">
+					                {% include 'pagination.html' %}
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+	{% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %} {% load i18n %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <title>Done Summary</title>
+
+
+</head>
+<body>
+ {% include 'messages.html' %}
+ {% include 'navbar.html' %}
+    {% block showcase %}
+      {% include "showcase.html" %}
+    {% endblock showcase %}
+    {% block content %}
+    {% endblock content %}
+    {% block footer %}
+      {% include "footer.html" %}
+    {% endblock footer %}
+
+  
+  <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.min.js' %}"></script>
+
+</body>
+
+</html>
